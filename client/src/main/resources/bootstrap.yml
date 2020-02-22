@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: client
+  profiles:
+    active: dev
+#此处在读取配置中心的配置时，会将order和dev通过“-”整合起来，从而定位到order-dev.yml
+  cloud:
+    config:
+      uri: http://localhost:8762      #8762是配置中心configserver的端口号
+      fail-fast: true
